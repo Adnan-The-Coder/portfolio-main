@@ -3,9 +3,11 @@ frontend:
   phases:
     preBuild:
       commands:
+        - echo "Installing dependencies..."
         - npm ci
     build:
       commands:
+        - echo "Building the Next.js app..."
         - npm run build
   artifacts:
     baseDirectory: .next
@@ -13,4 +15,4 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
+      - node_modules
