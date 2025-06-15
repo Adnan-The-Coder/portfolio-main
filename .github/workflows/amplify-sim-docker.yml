@@ -1,0 +1,25 @@
+name: CI - Simulate Amplify Build Using Docker
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  simulate-amplify-build:
+    name: 🐳 Docker Build (Amplify Simulation)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: 🐳 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: 🔧 Build Docker Image (Amplify Sim)
+        run: docker build -t amplify-next-sim .
+
+      - name: 🔍 Run Amplify Sim Container
+        run: docker run --rm amplify-next-sim
