@@ -38,3 +38,13 @@
 // 		</div>
 // 	);
 // }
+
+function page() {
+  return (
+    <div>
+        just a test page
+    </div>
+  )
+}
+
+export default page
