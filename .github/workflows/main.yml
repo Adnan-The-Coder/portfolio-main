@@ -28,6 +28,13 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Lint with Biome
+        run: bun run lint
+        continue-on-error: false
+
+      - name: Format check with Biome
+        run: bun biome format --check .
+        continue-on-error: true
+
       - name: Build Next.js
         run: bun run build
-
