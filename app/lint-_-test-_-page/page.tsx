@@ -1,6 +1,6 @@
 // "use strict";
 
-// import React from "react";
+import React from "react";
 
 // // Unused variable (linting error)
 // const unusedVar = "This will trigger a warning";
